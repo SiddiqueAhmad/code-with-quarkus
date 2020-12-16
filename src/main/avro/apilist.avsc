@@ -1,0 +1,310 @@
+{
+  "type": "record",
+  "name": "Envelope",
+  "namespace": "devdbserver1.dev_16_t_cloud_clinic.api_list",
+  "fields": [
+    {
+      "name": "before",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "Value",
+          "fields": [
+            {
+              "name": "id",
+              "type": "int"
+            },
+            {
+              "name": "company",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "api_soap",
+              "type": "string"
+            },
+            {
+              "name": "user_name",
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "type": "string"
+            },
+            {
+              "name": "unicode",
+              "type": "string"
+            },
+            {
+              "name": "mask",
+              "type": "string"
+            },
+            {
+              "name": "branch_mask",
+              "type": {
+                "type": "int",
+                "connect.type": "int16"
+              }
+            },
+            {
+              "name": "originator_param",
+              "type": "string"
+            },
+            {
+              "name": "cell_no_param",
+              "type": "string"
+            },
+            {
+              "name": "message_param",
+              "type": "string"
+            },
+            {
+              "name": "resp_code_param",
+              "type": "string"
+            },
+            {
+              "name": "resp_message_param",
+              "type": "string"
+            },
+            {
+              "name": "success_response_code",
+              "type": "int"
+            },
+            {
+              "name": "description",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "response_format",
+              "type": "string"
+            },
+            {
+              "name": "active",
+              "type": {
+                "type": "string",
+                "connect.default": "Y"
+              },
+              "default": "Y"
+            },
+            {
+              "name": "priority",
+              "type": {
+                "type": "string",
+                "connect.default": "N"
+              },
+              "default": "N"
+            },
+            {
+              "name": "entered_by",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "entered_on",
+              "type": {
+                "type": "long",
+                "connect.version": 1,
+                "connect.name": "io.debezium.time.Timestamp"
+              }
+            },
+            {
+              "name": "total_sms",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "total_broadcast",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "total_fail",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "total_successfull",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "session_id",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            }
+          ],
+          "connect.name": "devdbserver1.dev_16_t_cloud_clinic.api_list.Value"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "after",
+      "type": [
+        "null",
+        "Value"
+      ],
+      "default": null
+    },
+    {
+      "name": "source",
+      "type": {
+        "type": "record",
+        "name": "Source",
+        "namespace": "io.debezium.connector.mysql",
+        "fields": [
+          {
+            "name": "version",
+            "type": "string"
+          },
+          {
+            "name": "connector",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "ts_ms",
+            "type": "long"
+          },
+          {
+            "name": "snapshot",
+            "type": [
+              {
+                "type": "string",
+                "connect.version": 1,
+                "connect.parameters": {
+                  "allowed": "true,last,false"
+                },
+                "connect.default": "false",
+                "connect.name": "io.debezium.data.Enum"
+              },
+              "null"
+            ],
+            "default": "false"
+          },
+          {
+            "name": "db",
+            "type": "string"
+          },
+          {
+            "name": "table",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "server_id",
+            "type": "long"
+          },
+          {
+            "name": "gtid",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "file",
+            "type": "string"
+          },
+          {
+            "name": "pos",
+            "type": "long"
+          },
+          {
+            "name": "row",
+            "type": "int"
+          },
+          {
+            "name": "thread",
+            "type": [
+              "null",
+              "long"
+            ],
+            "default": null
+          },
+          {
+            "name": "query",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          }
+        ],
+        "connect.name": "io.debezium.connector.mysql.Source"
+      }
+    },
+    {
+      "name": "op",
+      "type": "string"
+    },
+    {
+      "name": "ts_ms",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "transaction",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "ConnectDefault",
+          "namespace": "io.confluent.connect.avro",
+          "fields": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "total_order",
+              "type": "long"
+            },
+            {
+              "name": "data_collection_order",
+              "type": "long"
+            }
+          ]
+        }
+      ],
+      "default": null
+    }
+  ],
+  "connect.name": "devdbserver1.dev_16_t_cloud_clinic.api_list.Envelope"
+}

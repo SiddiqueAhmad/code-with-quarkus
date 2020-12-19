@@ -1,0 +1,24 @@
+{
+    "name": "dev-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+        "tasks.max": "1",
+        "database.hostname": "olive-dev.chrcvtqviidy.ap-southeast-1.rds.amazonaws.com",
+        "database.port": "3306",
+        "database.user": "repl",
+        "database.password": "wWT7f9JOGpXGKh9K",
+        "database.server.id": "184054",
+        "database.server.name": "devdbserver1",
+        "database.include.list": "dev_16_t_cloud_clinic",
+        "table.include.list": "dev_16_t_cloud_clinic.api_list",
+        "snapshot.mode":"when_needed",
+        "database.history.kafka.bootstrap.servers": "kafka:9092",
+        "database.history.kafka.topic": "schema-changes.inventory",
+        "key.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+        "key.converter.apicurio.registry.url": "http://apicurio:8080/api",
+        "key.converter.apicurio.registry.global-id": "io.apicurio.registry.utils.serde.strategy.AutoRegisterIdStrategy",
+        "value.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+        "value.converter.apicurio.registry.url": "http://apicurio:8080/api",
+        "value.converter.apicurio.registry.global-id": "io.apicurio.registry.utils.serde.strategy.AutoRegisterIdStrategy"
+    }
+}

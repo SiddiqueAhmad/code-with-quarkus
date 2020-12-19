@@ -1,3 +1,14 @@
+# running-with-docker-compose
+
+This project infra can be run from the following code: 
+```shell script
+sudo DEBEZIUM_VERSION=1.3 docker-compose -f docker-compose-mysql-apicurio.yaml up
+```
+We have to regiser the mysql in kafka connect via the url below: 
+```shell script
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @register-mysql-apicurio-converter-avro.json
+```
+
 # code-with-quarkus project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.

@@ -1,0 +1,800 @@
+{
+  "type": "record",
+  "name": "Envelope",
+  "namespace": "olive_db.olive_16_t_cloud_clinic.visit_services",
+  "fields": [
+    {
+      "name": "before",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "Value",
+          "fields": [
+            {
+              "name": "id",
+              "type": "int"
+            },
+            {
+              "name": "patient_id",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "doctor_id",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "multi_doc_share",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "mr_no",
+              "type": "string"
+            },
+            {
+              "name": "service_type",
+              "type": {
+                "type": "string",
+                "connect.default": "Global"
+              },
+              "default": "Global"
+            },
+            {
+              "name": "service_id",
+              "type": "long"
+            },
+            {
+              "name": "subservice_id",
+              "type": "long"
+            },
+            {
+              "name": "service_name",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "head_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "main_head_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "acc_head",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "b_part_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "refund_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "refund_amount",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "refund_by",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "refund_date",
+              "type": [
+                "null",
+                {
+                  "type": "long",
+                  "connect.version": 1,
+                  "connect.name": "io.debezium.time.Timestamp"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "adj_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "d_s",
+              "type": [
+                {
+                  "type": "string",
+                  "connect.default": "N"
+                },
+                "null"
+              ],
+              "default": "N"
+            },
+            {
+              "name": "quantity",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "debit",
+              "type": {
+                "type": "bytes",
+                "scale": 2,
+                "precision": 10,
+                "connect.version": 1,
+                "connect.parameters": {
+                  "scale": "2",
+                  "connect.decimal.precision": "10"
+                },
+                "connect.default": "AA==",
+                "connect.name": "org.apache.kafka.connect.data.Decimal",
+                "logicalType": "decimal"
+              },
+              "default": "\u0000"
+            },
+            {
+              "name": "credit",
+              "type": {
+                "type": "bytes",
+                "scale": 2,
+                "precision": 10,
+                "connect.version": 1,
+                "connect.parameters": {
+                  "scale": "2",
+                  "connect.decimal.precision": "10"
+                },
+                "connect.name": "org.apache.kafka.connect.data.Decimal",
+                "logicalType": "decimal"
+              }
+            },
+            {
+              "name": "c_charges",
+              "type": [
+                "null",
+                {
+                  "type": "bytes",
+                  "scale": 2,
+                  "precision": 10,
+                  "connect.version": 1,
+                  "connect.parameters": {
+                    "scale": "2",
+                    "connect.decimal.precision": "10"
+                  },
+                  "connect.name": "org.apache.kafka.connect.data.Decimal",
+                  "logicalType": "decimal"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "v_checkin_section",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "checkin_id",
+              "type": "int"
+            },
+            {
+              "name": "visit_no",
+              "type": "string"
+            },
+            {
+              "name": "receipt_no",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "f_year",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "f_year_max",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "payment_no",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "ch_no",
+              "type": [
+                {
+                  "type": "int",
+                  "connect.default": 0
+                },
+                "null"
+              ],
+              "default": 0
+            },
+            {
+              "name": "patient_advance",
+              "type": {
+                "type": "int",
+                "connect.default": 0
+              },
+              "default": 0
+            },
+            {
+              "name": "patient_visit",
+              "type": {
+                "type": "string",
+                "connect.default": "T"
+              },
+              "default": "T"
+            },
+            {
+              "name": "amount",
+              "type": [
+                "null",
+                "double"
+              ],
+              "default": null
+            },
+            {
+              "name": "recieved",
+              "type": {
+                "type": "int",
+                "connect.default": 0
+              },
+              "default": 0
+            },
+            {
+              "name": "recieved_on",
+              "type": [
+                "null",
+                {
+                  "type": "long",
+                  "connect.version": 1,
+                  "connect.name": "io.debezium.time.Timestamp"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "recieved_by",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "discount_ref_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "discounted_amount",
+              "type": [
+                {
+                  "type": "int",
+                  "connect.default": 0
+                },
+                "null"
+              ],
+              "default": 0
+            },
+            {
+              "name": "d_l",
+              "type": [
+                {
+                  "type": "int",
+                  "connect.default": 0
+                },
+                "null"
+              ],
+              "default": 0
+            },
+            {
+              "name": "discount_percentage",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "service_balance",
+              "type": {
+                "type": "bytes",
+                "scale": 2,
+                "precision": 10,
+                "connect.version": 1,
+                "connect.parameters": {
+                  "scale": "2",
+                  "connect.decimal.precision": "10"
+                },
+                "connect.name": "org.apache.kafka.connect.data.Decimal",
+                "logicalType": "decimal"
+              }
+            },
+            {
+              "name": "advance_balance",
+              "type": "int"
+            },
+            {
+              "name": "previous_balance",
+              "type": {
+                "type": "bytes",
+                "scale": 2,
+                "precision": 10,
+                "connect.version": 1,
+                "connect.parameters": {
+                  "scale": "2",
+                  "connect.decimal.precision": "10"
+                },
+                "connect.name": "org.apache.kafka.connect.data.Decimal",
+                "logicalType": "decimal"
+              }
+            },
+            {
+              "name": "cat_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "comments",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "status",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "expire_date",
+              "type": [
+                "null",
+                {
+                  "type": "int",
+                  "connect.version": 1,
+                  "connect.name": "io.debezium.time.Date"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "q_status",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "token_no",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "voiced",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "s_room_no",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "reported",
+              "type": {
+                "type": "string",
+                "connect.default": "N"
+              },
+              "default": "N"
+            },
+            {
+              "name": "order_id",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "ref_disc",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "invoice_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "v_panel_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "v_package_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "v_package_type",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "in_query_result",
+              "type": {
+                "type": "string",
+                "connect.default": "Y"
+              },
+              "default": "Y"
+            },
+            {
+              "name": "payment_mode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "mop_detail",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "detail_no",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "edit_by",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "edit_on",
+              "type": [
+                "null",
+                {
+                  "type": "long",
+                  "connect.version": 1,
+                  "connect.name": "io.debezium.time.Timestamp"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "user_session_id",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "enter_from",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "uuid_form_key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "enteredon_date",
+              "type": [
+                "null",
+                {
+                  "type": "int",
+                  "connect.version": 1,
+                  "connect.name": "io.debezium.time.Date"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "enteredon",
+              "type": {
+                "type": "long",
+                "connect.version": 1,
+                "connect.name": "io.debezium.time.Timestamp"
+              }
+            },
+            {
+              "name": "enteredby",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "branch_id",
+              "type": "int"
+            },
+            {
+              "name": "compile_date",
+              "type": [
+                "null",
+                {
+                  "type": "long",
+                  "connect.version": 1,
+                  "connect.name": "io.debezium.time.Timestamp"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "session_id",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            }
+          ],
+          "connect.name": "olive_db.olive_16_t_cloud_clinic.visit_services.Value"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "after",
+      "type": [
+        "null",
+        "Value"
+      ],
+      "default": null
+    },
+    {
+      "name": "source",
+      "type": {
+        "type": "record",
+        "name": "Source",
+        "namespace": "io.debezium.connector.mysql",
+        "fields": [
+          {
+            "name": "version",
+            "type": "string"
+          },
+          {
+            "name": "connector",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "ts_ms",
+            "type": "long"
+          },
+          {
+            "name": "snapshot",
+            "type": [
+              {
+                "type": "string",
+                "connect.version": 1,
+                "connect.parameters": {
+                  "allowed": "true,last,false"
+                },
+                "connect.default": "false",
+                "connect.name": "io.debezium.data.Enum"
+              },
+              "null"
+            ],
+            "default": "false"
+          },
+          {
+            "name": "db",
+            "type": "string"
+          },
+          {
+            "name": "table",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "server_id",
+            "type": "long"
+          },
+          {
+            "name": "gtid",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "file",
+            "type": "string"
+          },
+          {
+            "name": "pos",
+            "type": "long"
+          },
+          {
+            "name": "row",
+            "type": "int"
+          },
+          {
+            "name": "thread",
+            "type": [
+              "null",
+              "long"
+            ],
+            "default": null
+          },
+          {
+            "name": "query",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          }
+        ],
+        "connect.name": "io.debezium.connector.mysql.Source"
+      }
+    },
+    {
+      "name": "op",
+      "type": "string"
+    },
+    {
+      "name": "ts_ms",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "transaction",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "ConnectDefault",
+          "namespace": "io.confluent.connect.avro",
+          "fields": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "total_order",
+              "type": "long"
+            },
+            {
+              "name": "data_collection_order",
+              "type": "long"
+            }
+          ]
+        }
+      ],
+      "default": null
+    }
+  ],
+  "connect.name": "olive_db.olive_16_t_cloud_clinic.visit_services.Envelope"
+}

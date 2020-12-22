@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "Envelope",
-  "namespace": "devdbserver1.dev_16_t_cloud_clinic.api_list",
+  "namespace": "olive_db.olive_16_t_cloud_clinic.api_list",
   "fields": [
     {
       "name": "before",
@@ -159,7 +159,7 @@
               "default": null
             }
           ],
-          "connect.name": "devdbserver1.dev_16_t_cloud_clinic.api_list.Value"
+          "connect.name": "olive_db.olive_16_t_cloud_clinic.api_list.Value"
         }
       ],
       "default": null
@@ -306,5 +306,5 @@
       "default": null
     }
   ],
-  "connect.name": "devdbserver1.dev_16_t_cloud_clinic.api_list.Envelope"
+  "connect.name": "olive_db.olive_16_t_cloud_clinic.api_list.Envelope"
 }

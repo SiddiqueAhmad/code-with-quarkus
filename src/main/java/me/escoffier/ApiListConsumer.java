@@ -1,44 +1,54 @@
 package me.escoffier;
 
 
-
-        import devdbserver1.dev_16_t_cloud_clinic.api_list.Envelope;
-        import devdbserver1.dev_16_t_cloud_clinic.api_list.Value;
+        import olive_db.olive_16_t_cloud_clinic.visit_services.Envelope;
+        import olive_db.olive_16_t_cloud_clinic.visit_services.Value;
         import org.eclipse.microprofile.reactive.messaging.Incoming;
-        import org.eclipse.microprofile.reactive.messaging.Acknowledgment;
         import org.eclipse.microprofile.reactive.messaging.Message;
         import org.jboss.logging.Logger;
 
         import javax.enterprise.context.ApplicationScoped;
+        import java.util.Objects;
         import java.util.concurrent.CompletionStage;
 
 @ApplicationScoped
 public class ApiListConsumer {
 
     private static final Logger LOGGER =
-            Logger.getLogger("MovieConsumer");
+            Logger.getLogger("ApiListConsumer");
 
-//    @Incoming("api-list-from-kafka")
-//    @Acknowledgment(Acknowledgment.Strategy.POST_PROCESSING)
-//    public void receive(Envelope envelope) {
-//        if(envelope != null){
-//            LOGGER.info("Received envelope");
-//            if(envelope.getAfter() != null)
-//            LOGGER.infof("envelope source db %s", envelope.getAfter().getName());
-//        }
-//
-//        else
-//            LOGGER.info("Received null envelope");
-//
-//    }
-
-    @Incoming("api-list-from-kafka")
+    @Incoming("visit-services-from-kafka")
     public CompletionStage<Void> consume(Message<Envelope> envelopeMessage) {
-        // process your price.
 
-        // Acknowledge the incoming message (commit the offset)
+        try {
+
+{
+
+                String op = envelopeMessage.getPayload().getOp();
+
+                Value visitService = null;
+
+                if (op.equals("c")) {
+                    visitService = envelopeMessage.getPayload().getAfter();
+                } else if (op.equals("u")) {
+                    visitService = envelopeMessage.getPayload().getAfter();
+                } else  {
+                    LOGGER.info("neither u nor c");
+                    visitService = envelopeMessage.getPayload().getBefore();
+                }
+
+    int id = visitService.getId();
+
+    LOGGER.infof("visitServiceId is %s", id);
+
+}
+            // Acknowledge the incoming message (commit the offset)
+
+
+        }catch (Exception e){
+            LOGGER.infof(e, "message thrown %s", e.getMessage());
+        }
         return envelopeMessage.ack();
     }
-
 
 }

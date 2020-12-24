@@ -1,6 +1,4 @@
 {
-    "name": "dev-connector",
-    "config": {
         "connector.class": "io.debezium.connector.mysql.MySqlConnector",
         "tasks.max": "1",
         "database.hostname": "olive-one-read.chrcvtqviidy.ap-southeast-1.rds.amazonaws.com",
@@ -10,15 +8,15 @@
         "database.server.id": "184054",
         "database.server.name": "olive-db",
         "database.include.list": "olive_16_t_cloud_clinic",
-        "table.include.list": "olive_16_t_cloud_clinic.api_list,olive_16_t_cloud_clinic.visit_services",
+        "table.include.list": "olive_16_t_cloud_clinic.test_samples,olive_16_t_cloud_clinic.rm_pr_patients,olive_16_t_cloud_clinic.api_list,olive_16_t_cloud_clinic.visit_services,olive_16_t_cloud_clinic.eon_user,olive_16_t_cloud_clinic.lab_test_results,olive_16_t_cloud_clinic.patient_observation_ans,olive_16_t_cloud_clinic.doctor_diagnosis,olive_16_t_cloud_clinic.patient_visit_medicine,olive_16_t_cloud_clinic.micro_lab_test_result,olive_16_t_cloud_clinic.patient_present_diagnosis,olive_16_t_cloud_clinic.clinic_package_clinical_service",
         "snapshot.mode":"when_needed",
-        "database.history.kafka.bootstrap.servers": "kafka:9092",
+        "database.history.kafka.bootstrap.servers": "172.31.9.76:9092,172.31.18.201:9092",
         "database.history.kafka.topic": "schema-changes.inventory",
         "key.converter": "io.apicurio.registry.utils.converter.AvroConverter",
-        "key.converter.apicurio.registry.url": "http://apicurio:8080/api",
+        "key.converter.apicurio.registry.url": "http://172.31.19.182:8080/api",
         "key.converter.apicurio.registry.global-id": "io.apicurio.registry.utils.serde.strategy.AutoRegisterIdStrategy",
         "value.converter": "io.apicurio.registry.utils.converter.AvroConverter",
-        "value.converter.apicurio.registry.url": "http://apicurio:8080/api",
+        "value.converter.apicurio.registry.url": "http://172.31.19.182:8080/api",
         "value.converter.apicurio.registry.global-id": "io.apicurio.registry.utils.serde.strategy.AutoRegisterIdStrategy"
-    }
 }
+
